@@ -24,7 +24,7 @@ New-BurntToastNotification -Text "Очистка папки Загрузки", "
 Start-Sleep -Seconds 600
 
 try {
-    Get-ChildItem -Path $folder -Recurse | Remove-Item -Force -ErrorAction Stop
+    Get-ChildItem -Path $folder -Recurse | Remove-Item -Recurse -Force -ErrorAction Stop
     New-BurntToastNotification -Text "Очистка папки Загрузки", "Готово, папка 'Загрузки' очищена." -Sound 'IM'
 } catch {
     New-BurntToastNotification -Text "Очистка папки Загрузки", "Ошибка: не удалось очистить папку. Подробности: $_" -Sound 'SMS'
